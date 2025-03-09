@@ -1,0 +1,19 @@
+service at_adt_open /vendor/bin/hw/at_adt open
+    class main
+    user radio
+    group radio
+    oneshot 
+    disabled
+
+service at_adt_close /vendor/bin/hw/at_adt close
+    class main
+    user radio
+    group radio 
+    oneshot
+    disabled
+
+on property:vendor.camera.txrx.enabled=1
+    start at_adt_open
+
+on property:vendor.camera.txrx.enabled=0
+    start at_adt_close

@@ -1,0 +1,9 @@
+service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
+    class hal
+    user nfc
+    group nfc
+    disabled
+
+on post-fs && property:ro.boot.hwname=atmos
+    start vendor.nfc_hal_service
+    setprop ro.vendor.se.type HCE,UICC

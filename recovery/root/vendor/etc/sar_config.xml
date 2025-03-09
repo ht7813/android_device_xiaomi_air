@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameter>
+
+    <project_config name="project_config">
+        <!-- 高通平台这里value配置true，mtk自己已近实现了，这里配置false -->
+        <need_wiff_sar key="need_wiff_sar" value="false" />
+        <sensor_num key="sensor_num" value="3" />
+    </project_config>
+
+    <sensor_state name="sensor_state">
+        <!-- sensor state值-->
+        <param key="all_away" value="0"/>
+        <param key="up_away_down_away_middle_near" value="1"/>
+        <param key="up_away_down_near_middle_away" value="2"/>
+        <param key="up_away_down_near_middle_near" value="3"/>
+        <param key="up_near_down_away_middle_away" value="4"/>
+        <param key="up_near_down_away_middle_near" value="5"/>
+        <param key="up_near_down_near_middle_away" value="6"/>
+        <param key="all_near" value="7"/>
+    </sensor_state>
+
+
+    <dsi_keys name="dsi_keys">
+        <!-- 配合天线，影响dsi的有哪些因素，正常情况下，有两个，听筒状态、sensor值-->
+        <dsi_param value="receiver_state"/>
+        <dsi_param value="sensor_state"/>
+        <!-- <param value="gpio"/> -->
+    </dsi_keys>
+
+    <wifi_sar nanme="wifi_sar">
+        <!-- wifi 的dsi值-->
+        <param receiver_state="false" sensor_state="0" dsi="0"/>
+        <param receiver_state="false" sensor_state="6" dsi="1"/>
+    </wifi_sar>
+
+    <dsi_value name="dsi_value">
+        <!--根据不同的状态，获取dsi值-->
+        <dsi receiver_state="true" sensor_state="0" value="1"/>
+        <dsi receiver_state="true" sensor_state="1" value="1"/>
+        <dsi receiver_state="true" sensor_state="2" value="1"/>
+        <dsi receiver_state="true" sensor_state="3" value="1"/>
+        <dsi receiver_state="true" sensor_state="4" value="1"/>
+        <dsi receiver_state="true" sensor_state="5" value="1"/>
+        <dsi receiver_state="true" sensor_state="6" value="1"/>
+        <dsi receiver_state="true" sensor_state="7" value="1"/>
+        <dsi receiver_state="false" sensor_state="0" value="2"/>
+        <dsi receiver_state="false" sensor_state="1" value="4"/>
+        <dsi receiver_state="false" sensor_state="2" value="3"/>
+        <dsi receiver_state="false" sensor_state="3" value="4"/>
+        <dsi receiver_state="false" sensor_state="4" value="4"/>
+        <dsi receiver_state="false" sensor_state="5" value="4"/>
+        <dsi receiver_state="false" sensor_state="6" value="4"/>
+        <dsi receiver_state="false" sensor_state="7" value="4"/>
+    </dsi_value>
+
+</parameter>
+
