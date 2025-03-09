@@ -9,7 +9,7 @@
 /boot               emmc      /dev/block/platform/soc/112b0000.ufshci/by-name/boot_b   flags=display=Boot;slotselect
 /init_boot          emmc      /dev/block/platform/soc/112b0000.ufshci/by-name/init_boot_a flags=display=Init Boot;slotselect
 /init_boot          emmc      /dev/block/platform/soc/112b0000.ufshci/by-name/init_boot_b flags=display=Init Boot;slotselect
-/nvram              emmc      /dev/block/platform/soc/112b0000.ufshci/by-name/nvrsm    flags=display=NvRam
+/nvram              emmc      /dev/block/platform/soc/112b0000.ufshci/by-name/nvram    flags=display=NvRam
 
 # Redmi Air Device's Original Recovery is in vendor_boot
 # /recovery           emmc      /dev/block/platform/soc/112b0000.ufshci/by-name/recovery   flags=display=Recovery
