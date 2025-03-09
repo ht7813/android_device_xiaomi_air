@@ -13,7 +13,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Inherit some common Twrp stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
-# Inherit from fire device
+# Inherit from air device
 $(call inherit-product, device/xiaomi/air/device.mk)
 
 PRODUCT_DEVICE := air
