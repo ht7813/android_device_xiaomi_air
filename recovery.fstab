@@ -1,12 +1,15 @@
 # Android fstab file.
-#<src>                                                  <mnt_point>         <type>    <mnt_flags>                                                                 <fs_mgr_flags>
-/dev/block/platform/soc/112b0000.ufshci/by-name/super    /system             ext4      ro,barrier=1                                                                wait,slotselect,logical
-/dev/block/platform/soc/112b0000.ufshci/by-name/super    /vendor             ext4      ro,barrier=1                                                                wait,slotselect,logical
-/dev/block/platform/soc/112b0000.ufshci/by-name/super    /product            ext4      ro,barrier=1                                                                wait,slotselect,logical
-/dev/block/platform/soc/112b0000.ufshci/by-name/userdata    /data               ext4      noatime,nosuid,nodev,noauto_da_alloc,barrier=1,errors=panic                wait,check,formattable
-/dev/block/platform/soc/112b0000.ufshci/by-name/cache    /cache              ext4      noatime,nosuid,nodev,noauto_da_alloc,barrier=1,errors=panic                wait,check
-/dev/block/platform/soc/112b0000.ufshci/by-name/boot_a   /boot               emmc      defaults                                                                    wait,slotselect,logical
-/dev/block/platform/soc/112b0000.ufshci/by-name/boot_b   /boot               emmc      defaults                                                                    wait,slotselect,logical
+#<mnt_point>         <type>    <src>                                                  <flags>
+/system             ext4      /dev/block/platform/soc/112b0000.ufshci/by-name/super    flags=display=System;logical;slotselect
+/vendor             ext4      /dev/block/platform/soc/112b0000.ufshci/by-name/super    flags=display=Vendor;logical;slotselect
+/product            ext4      /dev/block/platform/soc/112b0000.ufshci/by-name/super    flags=display=Product;logical;slotselect
+/data               ext4      /dev/block/platform/soc/112b0000.ufshci/by-name/userdata flags=display=Data
+/cache              ext4      /dev/block/platform/soc/112b0000.ufshci/by-name/cache    flags=display=Cache
+/boot               emmc      /dev/block/platform/soc/112b0000.ufshci/by-name/boot_a   flags=display=Boot;slotselect
+/boot               emmc      /dev/block/platform/soc/112b0000.ufshci/by-name/boot_b   flags=display=Boot;slotselect
+/init_boot          emmc      /dev/block/platform/soc/112b0000.ufshci/by-name/init_boot_a flags=display=Init Boot;slotselect
+/init_boot          emmc      /dev/block/platform/soc/112b0000.ufshci/by-name/init_boot_b flags=display=Init Boot;slotselect
+/nvram              emmc      /dev/block/platform/soc/112b0000.ufshci/by-name/nvrsm    flags=display=NvRam
 
 # Redmi Air Device's Original Recovery is in vendor_boot
-# /dev/block/platform/soc/112b0000.ufshci/by-name/recovery /recovery           emmc      defaults                                                                    defaults
+# /recovery           emmc      /dev/block/platform/soc/112b0000.ufshci/by-name/recovery   flags=display=Recovery
