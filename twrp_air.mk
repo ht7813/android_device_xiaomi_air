@@ -21,3 +21,5 @@ PRODUCT_NAME := twrp_air
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := Redmi 13R
 PRODUCT_MANUFACTURER := xiaomi
+
+PRODUCT_OUT := out/target/product/$(PRODUCT_DEVICE)/

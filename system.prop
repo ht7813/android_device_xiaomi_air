@@ -1,6 +1,6 @@
-ro.mediatek.platform=MT6768
-ro.vendor.mediatek.platform=MT6768
-ro.hardware=mt6768
+ro.mediatek.platform=MT6835
+ro.vendor.mediatek.platform=MT6835
+ro.hardware=mt6835
 ro.sf.lcd_density=440
 ro.boot.dynamic_partitions=true
 ro.mtk_tee_gp_support=1
